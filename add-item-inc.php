@@ -35,6 +35,7 @@
                 $params = [$product_name, $product_description, $price];
                 $statement->execute($params);
                 print '<p>Product Added</p>';
+                die();
             } catch (PDOException $e) {
                 print '<p>Hmm... Houston we have a problem. Contact this page\'s administrator and ignore the email!</p>';
             }

@@ -1,5 +1,6 @@
 <?php
     include 'top.php';
+    include 'add-item-inc.php';
 ?>
 
 <main>
