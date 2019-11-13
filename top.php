@@ -20,7 +20,10 @@
                 print 'Main Page';
                 print '</title>';
             } elseif ($path_parts['filename'] == 'create-item') {
-                print 'Create Item';
+                print 'Create An Item';
+                print '</title>';
+            } elseif ($path_parts['filename'] == 'list-items') {
+                print 'List Of Items';
                 print '</title>';
             }
         ?>
