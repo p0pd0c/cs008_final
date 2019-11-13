@@ -14,7 +14,7 @@
                 
                 print '<ol>';
                 while($row = $statement->fetch()) {
-                    print '<li>$row[fldname]: $row[flddescription], \$$row[fldprice]</li>';
+                    print "<li>$row[fldname]: $row[flddescription], \$$row[fldprice]</li>";
                 }
                 print '</ol>';
             ?>
