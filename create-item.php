@@ -6,7 +6,7 @@
     <?php
         include 'add-item-inc.php';
     ?>
-    <form action="add-item.inc.php" method="POST">
+    <form action="create-item.php" method="POST">
         <label for="txtItemName">Name of Item:</label>
         <input type="text" name="txtItemName">
         <label for="txtItemDescription">Description:</label>
