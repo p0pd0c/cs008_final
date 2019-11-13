@@ -1,12 +1,13 @@
-<?php
-    include 'top.php';
-?>
-    <main>
-        <a href="create-item.php">Create an item</a>
-    </main>
+    <?php
+        include 'top.php';
+    ?>
+        <main>
+            
+        </main>
 
-<?php
-    include 'footer.php';
+    <?php
+        include 'footer.php';
 ?>
 
-</body>
+    </body>
+</html>
