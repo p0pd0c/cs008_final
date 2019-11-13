@@ -9,27 +9,18 @@
             name="description"
             content="Byte Bakery provides a variety of computer themed baked goods">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        
         <?php
+        
+            $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
+            $path_parts = pathinfo($phpSelf);
+        
             print '<title>';
             if ($path_parts['filename'] == "index") {
-                print 'Main | UVM Gleaning Initiative';
+                print 'Main Page';
                 print '</title>';
-            } 
-            elseif ($path_parts['filename'] == "locations") {
-                print 'Locations | UVM Gleaning Initiative';
-                print '</title>';
-            } 
-            elseif ($path_parts['filename'] == "contact") {
-                print 'Contact | UVM Gleaning Initiative';
-                print '</title>';
-            } 
-            elseif ($path_parts['filename'] == "signup") {
-                print 'Sign Up | UVM Gleaning Initiative';
-                print '</title>';
-            }
-            elseif ($path_parts['filename'] == "contest") {
-                print 'Contest | UVM Gleaning Initiative';
+            } elseif ($path_parts['filename'] == 'create-item') {
+                print 'Create Item';
                 print '</title>';
             }
         ?>
