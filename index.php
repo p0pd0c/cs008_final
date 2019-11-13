@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Byte Bakery</title>
-    </head>
-    <body>
-        <!--Hello Jared-->
-    </body>
-</html>
+<?php
+    include 'top.php';
+?>
+    <main>
+        
+    </main>
+
+<?php
+    include 'footer.php';
+?>
