@@ -2,7 +2,7 @@
         include 'top.php';
     ?>
         <main>
-            
+            <p>Site under construction</p>
         </main>
 
     <?php

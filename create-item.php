@@ -1,9 +1,11 @@
 <?php
     include 'top.php';
-    include 'add-item-inc.php';
 ?>
 
 <main>
+    <?php
+        include 'add-item-inc.php';
+    ?>
     <form action="add-item.inc.php" method="POST">
         <label for="txtItemName">Name of Item:</label>
         <input type="text" name="txtItemName">
