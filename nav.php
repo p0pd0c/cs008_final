@@ -7,7 +7,19 @@
                 print ' activePage ';
             }
         */
-            print '<a href="create-item.php">Create an Item</a>';
+            print '<li class="';
+            if ($path_parts['filename'] == 'create-item') {
+                print ' activePage ';
+            }
+            print '"><a href="create-item.php">Create Item</a>';
+            print '</li>';
+            
+            print '<li class="';
+            if ($path_parts['filename'] == 'list-items') {
+                print ' activePage ';
+            }
+            print '"><a href="list-items.php">List Of Items</a>';
+            print '</li>';
         ?>
     </ol>
 </nav>
