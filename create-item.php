@@ -16,3 +16,6 @@
         <input type="submit" name="btnAddItem">
     </form>
 </main>
+
+<?php
+    include 'footer.php';

@@ -8,17 +8,17 @@
             }
         */
             print '<li class="';
-            if ($path_parts['filename'] == 'create-item') {
+            if ($path_parts['filename'] == 'index') {
                 print ' activePage ';
             }
-            print '"><a href="create-item.php">Create Item</a>';
+            print '"><a href="index.php">Home</a>';
             print '</li>';
             
             print '<li class="';
-            if ($path_parts['filename'] == 'list-items') {
+            if ($path_parts['filename'] == 'about') {
                 print ' activePage ';
             }
-            print '"><a href="list-items.php">List Of Items</a>';
+            print '"><a href="list-items.php">About Us</a>';
             print '</li>';
         ?>
     </ol>
