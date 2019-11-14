@@ -1,0 +1,18 @@
+/* Remove any default styling on html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling that applies to all pages */
+body {
+  background-color: #012622;
+}
+body main {
+  background-color: #003b36;
+  width: 80%;
+}
+
+/* Nav bar */
+
+/*# sourceMappingURL=custom.css.map */

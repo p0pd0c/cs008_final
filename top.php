@@ -17,18 +17,18 @@
         
             print '<title>';
             if ($path_parts['filename'] == "index") {
-                print 'Main Page';
+                print 'Home';
                 print '</title>';
-            } elseif ($path_parts['filename'] == 'create-item') {
-                print 'Create An Item';
+            } elseif ($path_parts['filename'] == 'about') {
+                print 'About Us';
                 print '</title>';
-            } elseif ($path_parts['filename'] == 'list-items') {
-                print 'List Of Items';
+            } else {
+                print 'Generic';
                 print '</title>';
             }
         ?>
 
-        
+        <!-- CSS Links Go Right Here -->
     </head>
 
     <?php
