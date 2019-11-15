@@ -1,4 +1,4 @@
-        <footer>
+        <footer class="container-fluid">
             <p>Under Construction</p>
 
         </footer>
