@@ -4,6 +4,10 @@ html, body {
   padding: 0;
 }
 
+main {
+  padding-top: 50px;
+}
+
 /* Styling that applies to all pages */
 body {
   background-color: #012622;

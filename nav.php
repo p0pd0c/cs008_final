@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <!-- Brand Name -->
-    <a class="navbar-brand" href="index">Byte Bakery</a>
+    <a class="navbar-brand" href="index.php">Byte Bakery</a>
 
     <!-- Hamburger Button -->
     <button 
@@ -23,14 +23,14 @@
                 if ($path_parts['filename'] == "index") {
                     print ' active ';
                 }
-                print '"><a class="nav-link" href="#">Home</a>';
+                print '"><a class="nav-link" href="index.php">Home</a>';
                 print '</li>';
 
                 print '<li class="nav-item';
                 if ($path_parts['filename'] == "about") {
                     print ' active ';
                 }
-                print '"><a class="nav-link" href="#">About Us</a>';
+                print '"><a class="nav-link" href="about.php">About Us</a>';
                 print '</li>';
             ?>
         </ul>
