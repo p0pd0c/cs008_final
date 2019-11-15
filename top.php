@@ -31,12 +31,19 @@
         <!-- CSS Links Go Right Here -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="./css/custom.css">
+
+        <?php 
+            if ($path_parts['filename'] == 'login') {
+                print '<link href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css" rel="stylesheet">';
+            }
+        ?>
+
     </head>
 
     <?php
         print '<body id="' . $path_parts['filename'] . '">';
         include 'header.php';
-        print '<main class="container-fluid">';
+        print '<main class="container-fluid m0">';
     ?>
 
 

@@ -12,6 +12,7 @@
         aria-expanded="false" 
         aria-label="Toggle navigation">
 
+        <!-- Need to get written permission for this span -->
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -31,6 +32,13 @@
                     print ' active ';
                 }
                 print '"><a class="nav-link" href="about.php">About Us</a>';
+                print '</li>';
+
+                print '<li class="nav-item';
+                if ($path_parts['filename'] == "login") {
+                    print ' active ';
+                }
+                print '"><a class="nav-link" href="login.php">Login</a>';
                 print '</li>';
             ?>
         </ul>

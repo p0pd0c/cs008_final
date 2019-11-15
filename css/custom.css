@@ -2,6 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 main {
@@ -12,9 +13,16 @@ main {
 body {
   background-color: #012622;
 }
-body main {
+body main.container-fluid {
+  color: #e98a15;
   background-color: #003b36;
-  width: 80%;
+  width: 85%;
+  height: 100%;
+}
+
+#login {
+  display: block;
+  background-color: #012622;
 }
 
 /* Nav bar */
