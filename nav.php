@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <!-- Brand Name -->
+    <!-- Brand Name | Clickable to go back to the home page-->
     <a class="navbar-brand" href="index.php">Byte Bakery</a>
 
     <!-- Hamburger Button -->
