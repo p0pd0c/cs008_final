@@ -33,11 +33,14 @@
                 print '"><a class="nav-link" href="about.php">About Us</a>';
                 print '</li>';
 
-                print '<li class="nav-item';
+                print '<li class="nav-item dropdown bg-dark';
                 if ($path_parts['filename'] == "login") {
                     print ' active ';
                 }
-                print '"><a class="nav-link" href="login.php">Login</a>';
+                print '"><a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Participate</a>';
+                print '<ul class="dropdown-menu">';
+                print '<a class="dropdown-item" href="login.php">Login</a>';
+                print '<a class="dropdown-item" href="signup.php">Sign Up</a>';
                 print '</li>';
             ?>
         </ul>
