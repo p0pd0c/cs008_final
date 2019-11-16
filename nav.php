@@ -34,7 +34,7 @@
                 print '</li>';
 
                 print '<li class="nav-item dropdown bg-dark';
-                if ($path_parts['filename'] == "login") {
+                if ($path_parts['filename'] == "login" || $path_parts['filename'] == "signup") {
                     print ' active ';
                 }
                 print '"><a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="#">Participate</a>';
