@@ -34,7 +34,7 @@
             <label for="txtConfirmPassword">Confirm Password</label>
         </fieldset>
 
-        <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     </form>
 </main>
 
