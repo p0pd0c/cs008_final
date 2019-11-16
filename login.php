@@ -19,9 +19,9 @@
             <label for="inputPassword">Password</label>
         </fieldset>
 
-        <section class="center-recaptcha">
-            <section class="g-recaptcha ml-auto mr-auto" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
-        </section>
+        <fieldset class="text-center">
+            <section class="g-recaptcha d-inline-block" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
+        </fieldset>
 
         <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
 

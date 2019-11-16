@@ -44,7 +44,7 @@
     
     // Get and sanitize data from a field
     function getData($field) {
-        if(!isset($_POST['btnSubmit'])) {
+        if(!isset($_POST[$field])) {
             $data = "";
         } else {
             $data = trim($_POST($field));
@@ -59,6 +59,9 @@
 
     // Check if the form was submitted
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Data is good unless it is invalid
+        $dataIsGood = true;
+
         // Getting all of the data from the form
         $email = getData('txtEmail');
         $txtPassword = getData('txtPassword');
