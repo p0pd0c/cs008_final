@@ -35,7 +35,7 @@ body main.container-fluid {
   color: #123c69;
 }
 #login form label, #signup form label {
-  color: #123c69;
+  color: rgba(18, 60, 105, 0.25);
 }
 #login form #btnSubmit, #signup form #btnSubmit {
   background-color: #123c69;
