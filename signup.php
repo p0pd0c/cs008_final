@@ -10,27 +10,27 @@
         </section>
 
         <fieldset class="form-label-group">
-            <input id="txtFirstName" class="form-control" placeholder="First Name" required autofocus="">
+            <input name="txtFirstName" id="txtFirstName" class="form-control" placeholder="First Name" required autofocus="">
             <label for="txtFirstName">First Name</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input id="txtLastName" class="form-control" placeholder="Last Name" required autofocus="">
+            <input name="txtLastName" id="txtLastName" class="form-control" placeholder="Last Name" required autofocus="">
             <label for="txtLast">Last Name</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input id="txtEmail" class="form-control" placeholder="Email address" required autofocus="">
+            <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Email address" required autofocus="">
             <label for="txtEmail">Email address</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input type="password" id="txtPassword" class="form-control" placeholder="Password" required>
+            <input name="txtPassword" type="password" id="txtPassword" class="form-control" placeholder="Password" required>
             <label for="txtPassword">Password</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input type="password" id="txtConfirmPassword" class="form-control" placeholder=" Confirm Password" required>
+            <input name="txtConfirmPassword" type="password" id="txtConfirmPassword" class="form-control" placeholder=" Confirm Password" required>
             <label for="txtConfirmPassword">Confirm Password</label>
         </fieldset>
 

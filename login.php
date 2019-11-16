@@ -9,16 +9,17 @@
         </section>
 
         <fieldset class="form-label-group">
-            <input id="txtEmail" class="form-control" placeholder="Email address" required autofocus="">
+            <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Email address" required autofocus="">
             <label for="txtEmail">Email address</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <input name="txtPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
             <label for="inputPassword">Password</label>
         </fieldset>
 
-        <button id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
+        <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
+
         <section class="text-center">
             <h4 class="mb-2 font-weight-normal">Don't have an account?</h4>
             <a id="btnSignUp" class="btn btn-sm btn-secondary btn-block" href="signup.php">Sign Up</a>
