@@ -22,8 +22,7 @@
         <section class="text-center">
             <h4 class="mb-2 font-weight-normal">Don't have an account?</h4>
             <a id="btnSignUp" class="btn btn-sm btn-secondary btn-block" href="signup.php">Sign Up</a>
-        </section>
-        
+        </section>        
     </form>
 </main>
 
