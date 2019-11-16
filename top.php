@@ -33,7 +33,7 @@
         <link rel="stylesheet" href="./css/custom.css">
 
         <?php 
-            if ($path_parts['filename'] == 'login') {
+            if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup') {
                 print '<link href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css" rel="stylesheet">';
             }
         ?>
@@ -43,7 +43,11 @@
     <?php
         print '<body id="' . $path_parts['filename'] . '">';
         include 'header.php';
-        print '<main class="container-fluid m0">';
+        if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup') {
+            print '<main class="container-fluid m0 row ml-auto mr-auto">';
+        } else {
+            print '<main class="container-fluid m0">';
+        }
     ?>
 
 

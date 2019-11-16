@@ -8,11 +8,11 @@ main
     padding-top: 50px
 
 /* Styling that applies to all pages */
-$main-background-color: #0b4f6c
-$main-background-light-color: #01baff
-$main-heading-color: #fbfbff
-$main-accent-grey: #757575
-$main-accent-green: #4cb944
+$main-background-color: #edc7b7
+$main-background-light-color: #eee2dc
+$main-heading-color: #ac3b61
+$main-accent-grey: #bab2b5
+$main-accent-blue: #123c69
 
 body
     background-color: $main-background-color
@@ -20,14 +20,30 @@ body
 
     main.container-fluid
         color: $main-accent-grey
-        background-color: $main-background-light-color
+        background-color: $main-background-color
         width: 85%
         height: 100%
         font-weight: 600
 
-#login
+#login, #signup
     display: block
     background-color: $main-background-color
+
+    form 
+        color: $main-heading-color
+        background-color: $main-background-light-color
+
+        border-radius: 3%
+
+        input
+            color: $main-accent-blue
+
+        label
+            color: $main-accent-blue
+
+        #btnSubmit
+            background-color: $main-accent-blue
+            border-color: $main-accent-blue
     
 
 

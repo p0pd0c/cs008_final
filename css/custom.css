@@ -11,20 +11,35 @@ main {
 
 /* Styling that applies to all pages */
 body {
-  background-color: #0b4f6c;
+  background-color: #edc7b7;
   font-family: sans-serif;
 }
 body main.container-fluid {
-  color: #757575;
-  background-color: #01baff;
+  color: #bab2b5;
+  background-color: #edc7b7;
   width: 85%;
   height: 100%;
   font-weight: 600;
 }
 
-#login {
+#login, #signup {
   display: block;
-  background-color: #0b4f6c;
+  background-color: #edc7b7;
+}
+#login form, #signup form {
+  color: #ac3b61;
+  background-color: #eee2dc;
+  border-radius: 3%;
+}
+#login form input, #signup form input {
+  color: #123c69;
+}
+#login form label, #signup form label {
+  color: #123c69;
+}
+#login form #btnSubmit, #signup form #btnSubmit {
+  background-color: #123c69;
+  border-color: #123c69;
 }
 
 /* Nav bar */
