@@ -1,5 +1,6 @@
 <?php 
     include 'top.php';
+    include 'handle_login.inc.php';
 ?>
     <form class="form-signin align-self-center" method="POST" action=<?php print '"' . $phpSelf . '"'; ?>>
         <section class="text-center mb-4">
@@ -18,6 +19,10 @@
             <label for="inputPassword">Password</label>
         </fieldset>
 
+        <section class="center-recaptcha">
+            <section class="g-recaptcha ml-auto mr-auto" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
+        </section>
+
         <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
 
         <section class="text-center">
@@ -26,6 +31,8 @@
         </section>        
     </form>
 </main>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>
 
 <?php
     include 'footer.php';
