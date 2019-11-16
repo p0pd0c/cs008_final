@@ -12,8 +12,7 @@
         aria-expanded="false" 
         aria-label="Toggle navigation">
 
-        <!-- Need to get written permission for this span -->
-        <span class="navbar-toggler-icon"></span>
+        <icon class="navbar-toggler-icon"></icon>
     </button>
 
     <!-- Collapsed Content In Menu -->
