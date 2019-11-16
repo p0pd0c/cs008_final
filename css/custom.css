@@ -11,18 +11,20 @@ main {
 
 /* Styling that applies to all pages */
 body {
-  background-color: #012622;
+  background-color: #0b4f6c;
+  font-family: sans-serif;
 }
 body main.container-fluid {
-  color: #e98a15;
-  background-color: #003b36;
+  color: #757575;
+  background-color: #01baff;
   width: 85%;
   height: 100%;
+  font-weight: 600;
 }
 
 #login {
   display: block;
-  background-color: #012622;
+  background-color: #0b4f6c;
 }
 
 /* Nav bar */
