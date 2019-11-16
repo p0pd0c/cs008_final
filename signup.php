@@ -15,12 +15,17 @@
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input name="txtLastName" id="txtLastName" class="form-control" placeholder="Last Name" required autofocus="">
+            <input name="txtLastName" id="txtLastName" class="form-control" placeholder="Last Name" required>
             <label for="txtLast">Last Name</label>
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Email address" required autofocus="">
+            <input name="txtUsername" id="txtUsername" class="form-control" placeholder="Username" required>
+            <label for="txtUsername">Username</label>
+        </fieldset>
+
+        <fieldset class="form-label-group">
+            <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Email address" required>
             <label for="txtEmail">Email address</label>
         </fieldset>
 
