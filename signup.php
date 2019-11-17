@@ -40,11 +40,6 @@
             <label for="txtConfirmPassword">Confirm Password</label>
         </fieldset>
 
-        <fieldset class="text-center">
-            <!-- Google returns a div inside the following section... there is no way around this (out of my control), unless I do not use google reCaptcha... -->
-            <section class="g-recaptcha d-inline-block" data-size="compact" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
-        </fieldset>
-
         <button id="btnSignUpSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     </form>
 </main>

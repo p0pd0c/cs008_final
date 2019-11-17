@@ -1,6 +1,18 @@
 <?php
+include 'sql.php';
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;
+
+function getData($field) {
+    if(!isset($_POST[$field])) {
+        $data = "";
+    } else {
+        $data = trim($_POST[$field]);
+        $data = htmlspecialchars($data);
+    }
+
+    return $data;
+}
 
 // If the user clicked the signup button
 if(isset($_POST['btnSignUpSubmit'])) {
