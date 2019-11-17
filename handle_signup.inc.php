@@ -32,9 +32,13 @@ if(isset($_POST['btnSignUpSubmit'])) {
     if(!preg_match($pregName, $signup_txtFirstName)) {
         // User has invalid chars in name
         print '<p role="alert" class="alert alert-warning ml-auto mr-auto">First Name must be alphabetical. The only permitted symbols are accents, hyphens, and apostrophe</p>';
+
+        $dataIsGood = false;
     } elseif(!preg_match($pregName, $signup_txtLastName)) {
         // User has invalid chars in name
         print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Last Name must be alphabetical. The only permitted symbols are accents, hyphens, and apostrophe</p>';
+
+        $dataIsGood = false;
     }
 
     // Validate Username
@@ -72,12 +76,12 @@ if(isset($_POST['btnSignUpSubmit'])) {
     }
 
     // Check if username already exists in db
-    $sql = 'SELECT pmkID FROM tblUsers WHERE fldUsername = :username';
+    $sql = 'SELECT * FROM tblUsers WHERE fldUsername = :username';
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':username', $signup_txtUsername, PDO::PARAM_STR);
     $statement->execute();
     
-    if($statement->rowCount() == 1) {
+    if($statement->rowCount() != 0) {
         // Username is taken
         print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Username is taken... please try another</p>';
 
@@ -85,7 +89,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
     }
 
     // Check if email already exists in db
-    $sql = 'SELECT pmkID FROM tblUsers WHERE fldEmail = :email';
+    $sql = 'SELECT * FROM tblUsers WHERE fldEmail = :email';
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $signup_txtEmail, PDO::PARAM_STR);
     $statement->execute();
