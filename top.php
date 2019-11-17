@@ -44,7 +44,7 @@
         print '<body id="' . $path_parts['filename'] . '">';
         include 'header.php';
         if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup') {
-            print '<main class="container-fluid m0 row ml-auto mr-auto">';
+            print '<main class="container-fluid m0 d-flex flex-column ml-auto mr-auto">';
         } else {
             print '<main class="container-fluid m0">';
         }

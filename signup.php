@@ -16,7 +16,7 @@
 
         <fieldset class="form-label-group">
             <input name="txtLastName" id="txtLastName" class="form-control" placeholder="Last Name" required>
-            <label for="txtLast">Last Name</label>
+            <label for="txtLastName">Last Name</label>
         </fieldset>
 
         <fieldset class="form-label-group">
@@ -39,7 +39,7 @@
             <label for="txtConfirmPassword">Confirm Password</label>
         </fieldset>
 
-        <button id="btnSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+        <button id="btnSignUpSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     </form>
 </main>
 

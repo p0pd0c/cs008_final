@@ -27,6 +27,9 @@ body main.container-fluid {
   display: block;
   background-color: #edc7b7;
 }
+#login p.alert, #signup p.alert {
+  width: 60%;
+}
 #login form, #signup form {
   color: #ac3b61;
   background-color: #eee2dc;
