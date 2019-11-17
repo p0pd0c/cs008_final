@@ -66,11 +66,21 @@
         $statement->bindParam(':email', $signup_txtEmail, PDO::PARAM_STR);
         $statement->execute();
         $row = $statement->fetch();
-        if(password_verify($txtPassword, $row['fldPassword'])) {
-            // Password Is Correct
+
+        // Check that a user exits
+        if($statement->rowCount() == 1) {
+            if(password_verify($txtPassword, $row['fldPassword'])) {
+                // Password Is Correct
+                print '<p class="alert alert-success ml-auto mr-auto">Login Successful</p>';
+            } else {
+                // Password Is Incorrect
+                print '<p class="alert alert-warning ml-auto mr-auto">Email or password is incorrect</p>';
+            }
         } else {
-            // Password Is Incorrect
+            // User does not exist
+            print '<p class="alert alert-danger ml-auto mr-auto">User does not exist</p>';
         }
+        
     }
 ?>
     

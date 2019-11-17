@@ -21,7 +21,7 @@
 
         <fieldset class="text-center">
             <!-- Google returns a div inside the following section... there is no way around this (out of my control), unless I do not use google reCaptcha... -->
-            <section class="g-recaptcha d-inline-block" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
+            <section class="g-recaptcha d-inline-block" data-size="compact" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
         </fieldset>
 
         <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
