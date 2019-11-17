@@ -28,9 +28,7 @@
         $reCaptchaResponseString = getData('g-recaptcha-response');
 
         // Check if email is valid
-        if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            // Email is good
-        } else {
+        if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             // Email is bad
             $dataIsGood = false;
             
@@ -61,14 +59,14 @@
     }
     // Authenticate User
     if($dataIsGood) {
-        $sql = 'SELECT pmkID FROM tblUsers WHERE fldEmail = :email';
+        $sql = 'SELECT * FROM tblUsers WHERE fldEmail = :email';
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':email', $signup_txtEmail, PDO::PARAM_STR);
         $statement->execute();
-        $row = $statement->fetch();
 
         // Check that a user exits
         if($statement->rowCount() == 1) {
+            $row = $statement->fetch();
             if(password_verify($txtPassword, $row['fldPassword'])) {
                 // Password Is Correct
                 print '<p class="alert alert-success ml-auto mr-auto">Login Successful</p>';
