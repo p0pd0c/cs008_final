@@ -59,14 +59,14 @@
     }
     // Authenticate User
     if($dataIsGood) {
-        $sql = 'SELECT * FROM tblUsers WHERE fldEmail = :email';
+        $sql = 'SELECT pmkID, fldPassword FROM tblUsers WHERE fldEmail = :email';
         $statement = $pdo->prepare($sql);
-        $statement->bindParam(':email', $signup_txtEmail, PDO::PARAM_STR);
+        $statement->bindParam(':email', $email, PDO::PARAM_STR);
         $statement->execute();
-
+        print 'Row count: '.$statement->rowCount();
+        $row = $statement->fetch();
         // Check that a user exits
         if($statement->rowCount() == 1) {
-            $row = $statement->fetch();
             if(password_verify($txtPassword, $row['fldPassword'])) {
                 // Password Is Correct
                 print '<p class="alert alert-success ml-auto mr-auto">Login Successful</p>';
