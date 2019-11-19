@@ -100,10 +100,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
         print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Email is already being used on another account. Please use a unique email.</p>';
 
         $dataIsGood = false;
-    }
-
-    // Password is valid (waiting till now for other validations so that spam is adverted [sha can take a while]), hash it
-    $signup_hashedPassword = hash('sha256', $signup_txtPassword);
+    } 
 }
 
 // If user entered information correctly... sign them up
@@ -143,12 +140,11 @@ if($dataIsGood) {
         if(!$mailSent) {
             print '<p class="alert alert-danger ml-auto mr-auto">Notification email failed to send... did you give an invalid email address? Try logging in, for it is possible our mail servers are down. If you cannont log in... you must make a new account!</p>';
         }
-        print '<h2 class="content-heading"> Thank you, your information has been recieved.</h2>';
-
+        
         die();
 
     } catch (PDOException $e) {
-        print '<p role="alert" class="alert alert-danger">Hmm... Houston we have a problem. Contact this page\'s administrator and ignore the email!</p>';
+        print '<p role="alert" class="alert alert-danger ml-auto mr-auto">Hmm... Houston we have a problem. Contact this page\'s administrator and ignore the email!</p>';
         die();
     }
 }
