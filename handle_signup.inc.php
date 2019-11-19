@@ -113,7 +113,7 @@ if($dataIsGood) {
         $statement = $pdo->prepare($sql);
         $params = [$signup_txtUsername, $signup_txtEmail, $signup_hashedPassword, $signup_txtFirstName, $signup_txtLastName];
         $statement->execute($params);
-        print '<p role="alert" class="alert alert-success">Your account has been created successfully. <a class="alert-link" href="login.php">Log in</a></p>';
+        print '<p role="alert" class="alert alert-success ml-auto mr-auto">Your account has been created successfully. <a class="alert-link" href="login.php">Please Log in</a></p>';
 
         // Send an email to the user
         $to = $signup_txtEmail;
