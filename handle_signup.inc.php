@@ -128,8 +128,8 @@ if($dataIsGood) {
         $headers .= "Content-type: text/html; charset=utf-8\r\n";
         $headers .= "From: " . $from . "\r\n";
 
-        $mailedSent = mail($to, $subject, $mailMessage, $headers);
-
+        $mailSent = mail($to, $subject, $mailMessage, $headers);
+        
         if($mailedSent) {
             print 'Check your inbox for a little message!';
         }
