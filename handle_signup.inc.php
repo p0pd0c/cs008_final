@@ -108,6 +108,9 @@ if(isset($_POST['btnSignUpSubmit'])) {
 
 // If user entered information correctly... sign them up
 if($dataIsGood) {
+    // Password is valid (waiting till now for other validations so that spam is adverted), hash it
+    $signup_hashedPassword = password_hash($signup_txtPassword, PASSWORD_BCRYPT);
+    // Try and add the user to the db
     try {
         $sql = 'INSERT INTO tblUsers (fldUsername, fldEmail, fldPassword, fldFirstName, fldLastName) VALUES (?,?,?,?,?)';
         $statement = $pdo->prepare($sql);
