@@ -1,5 +1,6 @@
 <?php
 include 'sql.php';
+include 'recaptchalib.php';
 
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;
@@ -27,6 +28,28 @@ if(isset($_POST['btnSignUpSubmit'])) {
     $signup_txtEmail = getData('txtEmail');
     $signup_txtPassword = getData('txtPassword');
     $signup_txtConfirmPassword = getData('txtConfirmPassword');
+    $reCaptchaResponseString = getData('g-recaptcha-response');
+
+    // Check if the user interacted with the reCaptcha
+    if($_POST['g-recaptcha-response']) {
+        $response = $reCaptcha->verifyResponse(
+            $_SERVER['REMOTE_ADDR'],
+            $_POST['g-recaptcha-response']
+        );
+        // Check the reCaptcha response for fail cases
+        if($response == null || !$response->success) {
+            // Either the user did not do reCaptcha or it failed
+            print '<p role="alert" class="alert alert-warning ml-auto mr-auto">reCaptcha has failed... please try again and be sure to complete reCaptcha</p>';
+            
+            $dataIsGood = false;
+        }
+
+    } else {
+        // User did not complete reCaptcha
+        print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Please complete reCaptcha</p>';
+
+        $dataIsGood = false;
+    }
 
     // Validate Name
     $pregName = "/[^0-9\.\,\"\?\!\;\:\#\$\%\&\(\)\*\+\/\<\>\=\@\[\]\\\^\_\{\}\|\~]+/";
