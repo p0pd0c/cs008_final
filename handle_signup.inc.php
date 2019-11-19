@@ -119,7 +119,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
     $statement->execute();
 
     if($statement->rowCount() == 1) {
-        // Username is taken
+        // Email is taken
         print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Email is already being used on another account. Please use a unique email.</p>';
 
         $dataIsGood = false;
