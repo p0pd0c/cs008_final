@@ -77,8 +77,7 @@
         } else {
             // User does not exist
             print '<p class="alert alert-danger ml-auto mr-auto">User does not exist</p>';
-        }
-        
+        }        
     }
 ?>
     

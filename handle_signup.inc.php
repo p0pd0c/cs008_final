@@ -1,5 +1,6 @@
 <?php
 include 'sql.php';
+
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;
 
@@ -76,7 +77,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
     }
 
     // Check if username already exists in db
-    $sql = 'SELECT * FROM tblUsers WHERE fldUsername = :username';
+    $sql = 'SELECT fldUsername FROM tblUsers WHERE fldUsername = :username';
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':username', $signup_txtUsername, PDO::PARAM_STR);
     $statement->execute();
@@ -89,7 +90,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
     }
 
     // Check if email already exists in db
-    $sql = 'SELECT * FROM tblUsers WHERE fldEmail = :email';
+    $sql = 'SELECT fldEmail FROM tblUsers WHERE fldEmail = :email';
     $statement = $pdo->prepare($sql);
     $statement->bindParam(':email', $signup_txtEmail, PDO::PARAM_STR);
     $statement->execute();
