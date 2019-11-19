@@ -130,8 +130,18 @@ if($dataIsGood) {
 
         $mailSent = mail($to, $subject, $mailMessage, $headers);
         
-        if($mailedSent) {
-            print 'Check your inbox for a little message!';
+        // Let user know that their account has been created successfully
+        print '<section class="alert alert-success ml-auto mr-auto" role="alert">';
+        print '<h1 class="alert-heading">Information recieved!</h4>';
+        print '<p>You have successfully created a bytebakery account with the username ' . $signup_txtUsername . '</p>';
+        // If mailing fails... either the user gave an invalid email, or the mail server is having issues
+        if($mailSent) {
+            print '<hr>';
+            print '<p class="mb-0">Check your email for a little message from bytebakery</p>';
+        }
+        print '</section>';
+        if(!$mailSent) {
+            print '<p class="alert alert-danger ml-auto mr-auto">Notification email failed to send... did you give an invalid email address? Try logging in, for it is possible our mail servers are down. If you cannont log in... you must make a new account!</p>';
         }
         print '<h2 class="content-heading"> Thank you, your information has been recieved.</h2>';
 
