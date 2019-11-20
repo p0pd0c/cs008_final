@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,9 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <?php
-            // Starting session on every single page for authentication... session will store auth token
-            session_start();
-
             // Filename of the currently executing script
             $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
 
