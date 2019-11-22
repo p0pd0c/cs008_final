@@ -24,6 +24,11 @@
             <section class="g-recaptcha d-inline-block" data-size="compact" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
         </fieldset>
 
+        <fieldset class="text-center">
+            <input type="checkbox" id="chkRequired" name="chkRequired">
+            <label for="chkRequired">Remember Me</label>
+        </fieldset>
+
         <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
 
         <section class="text-center">

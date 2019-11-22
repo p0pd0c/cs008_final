@@ -1,6 +1,7 @@
 <?php
     include 'sql.php';
     include 'recaptchalib.php';
+    include 'auth_config.php';
     
     // Get and sanitize data from a field
     function getData($field) {
@@ -59,7 +60,7 @@
     }
     // Authenticate User
     if($dataIsGood) {
-        $sql = 'SELECT fldPassword FROM tblUsers WHERE fldEmail = :email';
+        $sql = 'SELECT fldPassword, fldUsername, fldUUK FROM tblUsers WHERE fldEmail = :email';
         $statement = $pdo->prepare($sql);
         $statement->bindParam(':email', $email, PDO::PARAM_STR);
         $statement->execute();
@@ -70,6 +71,20 @@
             if(password_verify($txtPassword, $row['fldPassword'])) {
                 // Password Is Correct
                 print '<p class="alert alert-success ml-auto mr-auto">Login Successful</p>';
+
+                $_SESSION['fldUsername'] = $row['fldUsername'];
+
+                if(isset($_POST['chkRemember'])) {
+                    remember_me($row['fldUUK']);
+                }
+
+                if(isset($_SESSION['ENTRY_URI'])) {
+                    header("Location: {$_SESSION["ENTRY_URI"]}");
+                    exit;
+                } else {
+                    header("Location: /");
+                    exit;
+                }
             } else {
                 // Password Is Incorrect
                 print '<p class="alert alert-warning ml-auto mr-auto">Email or password is incorrect</p>';
