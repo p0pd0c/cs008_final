@@ -1,7 +1,7 @@
 <?php
 include 'sql.php';
 include 'recaptchalib.php';
-include 'auth_config.php';
+
 
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;

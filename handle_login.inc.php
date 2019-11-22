@@ -1,7 +1,6 @@
 <?php
     include 'sql.php';
     include 'recaptchalib.php';
-    include 'auth_config.php';
     
     // Get and sanitize data from a field
     function getData($field) {
@@ -82,7 +81,7 @@
                     header("Location: {$_SESSION["ENTRY_URI"]}");
                     exit;
                 } else {
-                    header("Location: /");
+                    header("Location: /cs008/cs008_final/");
                     exit;
                 }
             } else {

@@ -1,4 +1,5 @@
 <?php 
+    include 'auth_config.php';
     include 'top.php';
     include 'handle_login.inc.php';
 ?>
