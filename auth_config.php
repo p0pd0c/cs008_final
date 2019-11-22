@@ -7,6 +7,7 @@
     // Timezone for cookie expirations
     date_default_timezone_set('America/New_York');
 
+    // Start session to get access to session variables
     session_start();
 
     // This function checks the session variables to see if the user is currently logged in/ or if we are making a test request for testing purposes
@@ -15,8 +16,8 @@
         $_SESSION['ENTRY_URI'] = $_SERVER['REQUEST_URI'];
 
         // Check if the uid is set... it it is, then the user is currently logged in
-        if(isset($_SESSION['uid'])) {
-            return $_SESSION['uid'];
+        if(isset($_SESSION['fldUsername'])) {
+            return $_SESSION['fldUsername'];
         }
 
         // Test requests can be made, check if the request is a test
@@ -51,18 +52,18 @@
 
     // Now we should deal with extending the expiration of the remember cookie if the user is logged in
     // Check if the user is logged in by looking at the session variables
-    if(!isset($_SESSION['uid'])) {
+    if(!isset($_SESSION['fldUsername'])) {
         // Check if user's cookie is set due to them using remember me when loggin in
         if(isset($_COOKIE['uuk'])) {
             $uuk = htmlentities($_COOKIE['uuk']);
-            $sql = 'SELECT uid FROM tblUsers WHERE uuk = :uuk';
+            $sql = 'SELECT fldUsername FROM tblUsers WHERE uuk = :uuk';
             $statement = $pdo->prepare($sql);
             $statement->bindParam(':uuk', $uuk, PDO::PARAM_STR);
             $statement->execute();
             
             if($statment->rowCount() == 1) {
                 $row = $statement->fetch();
-                $_SESSION['uid'] = $row['uid'];
+                $_SESSION['fldUsername'] = $row['fldUsername'];
 
                 // This is the part where we call the cookie maker to extend the expiration
                 remember_me($uuk);

@@ -1,6 +1,7 @@
 <?php
 include 'sql.php';
 include 'recaptchalib.php';
+include 'auth_config.php';
 
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;
@@ -130,13 +131,23 @@ if(isset($_POST['btnSignUpSubmit'])) {
 if($dataIsGood) {
     // Password is valid (waiting till now for other validations so that spam is adverted), hash it
     $signup_hashedPassword = password_hash($signup_txtPassword, PASSWORD_BCRYPT);
+    // Build UUK with username, password, and a random integer
+    $uuk = md5($signup_txtUsername . $signup_txtPassword . rand());
     // Try and add the user to the db
     try {
-        $sql = 'INSERT INTO tblUsers (fldUsername, fldEmail, fldPassword, fldFirstName, fldLastName) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO tblUsers (fldUsername, fldEmail, fldPassword, fldFirstName, fldLastName, fldUUK) VALUES (?,?,?,?,?,?)';
         $statement = $pdo->prepare($sql);
-        $params = [$signup_txtUsername, $signup_txtEmail, $signup_hashedPassword, $signup_txtFirstName, $signup_txtLastName];
+        $params = [$signup_txtUsername, $signup_txtEmail, $signup_hashedPassword, $signup_txtFirstName, $signup_txtLastName, $uuk];
         $statement->execute($params);
         print '<p role="alert" class="alert alert-success ml-auto mr-auto">Your account has been created successfully. <a class="alert-link" href="login.php">Please Log in</a></p>';
+
+        // Put the username into a session variable
+        $_SESSION['fldUsername'] = $signup_txtUsername;
+
+        // Check for remember me
+        if(isset($_POST['chkRequired'])) {
+            remember_me($uuk);
+        }
 
         // Send an email to the user
         $to = $signup_txtEmail;

@@ -45,6 +45,11 @@
             <section class="g-recaptcha d-inline-block" data-size="compact" data-theme="dark" data-sitekey="6LcCF8MUAAAAANfIE-fFkTtErfMPMIVfBVn-mwMw"></section>
         </fieldset>
 
+        <fieldset class="text-center">
+            <input type="checkbox" id="chkRequired" name="chkRequired">
+            <label for="chkRequired">Remember Me</label>
+        </fieldset>
+
         <button name="btnSignUpSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
     </form>
 </main>
