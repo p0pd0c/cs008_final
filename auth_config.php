@@ -28,6 +28,31 @@
             return FALSE;
         }
 
+        //
+        // Now we should deal with extending the expiration of the remember cookie if the user is logged in
+        // Check if the user is logged in by looking at the session variables
+        if(!isset($_SESSION['fldUsername'])) {
+            // Check if user's cookie is set due to them using remember me when loggin in
+            if(isset($_COOKIE['uuk'])) {
+                $uuk = htmlspecialchars($_COOKIE['uuk']);
+                $sql = 'SELECT fldUsername FROM tblUsers WHERE uuk = :uuk';
+                $statement = $pdo->prepare($sql);
+                $statement->bindParam(':uuk', $uuk, PDO::PARAM_STR);
+                $statement->execute();
+                
+                if($statment->rowCount() == 1) {
+                    $row = $statement->fetch();
+                    $_SESSION['fldUsername'] = $row['fldUsername'];
+
+                    // This is the part where we call the cookie maker to extend the expiration
+                    remember_me($uuk);
+
+                    return $_SESSION['fldUsername'];
+                }
+            }
+        }
+        //
+
         // If we get to this point, we are sure that this is not a test request and the user is not logged in so we need to direct them to the login page
         header('Location: login.php');
         exit;
@@ -44,7 +69,7 @@
         // The expiration date should be $remember seconds from the current date
         $expiration_date = time() + date('Z') + REMEMBER;
 
-        $path_for_cookie = '/cs008_final/';
+        $path_for_cookie = '/cs008/cs008_final/';
         $domain_for_cookie = NULL;
         $is_secure_cookie = FALSE;
 
@@ -54,27 +79,4 @@
         // Time to set the cookie (all we really did here was get the date of expiration and we are embeding the user's unique user key)
         setcookie($name_of_cookie, $value_of_cookie, $expiration_date, $path_for_cookie, $domain_for_cookie, $is_secure_cookie, $http_cookie);
     }
-
-    // Now we should deal with extending the expiration of the remember cookie if the user is logged in
-    // Check if the user is logged in by looking at the session variables
-    if(!isset($_SESSION['fldUsername'])) {
-        // Check if user's cookie is set due to them using remember me when loggin in
-        if(isset($_COOKIE['uuk'])) {
-            $uuk = htmlspecialchars($_COOKIE['uuk']);
-            $sql = 'SELECT fldUsername FROM tblUsers WHERE uuk = :uuk';
-            $statement = $pdo->prepare($sql);
-            $statement->bindParam(':uuk', $uuk, PDO::PARAM_STR);
-            $statement->execute();
-            
-            if($statment->rowCount() == 1) {
-                $row = $statement->fetch();
-                $_SESSION['fldUsername'] = $row['fldUsername'];
-
-                // This is the part where we call the cookie maker to extend the expiration
-                remember_me($uuk);
-            }
-        }
-    }
-
-
 ?>

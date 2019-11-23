@@ -8,7 +8,7 @@
     $expiration_date = time() - date('Z') - $remember;
 
     if(isset($_COOKIE['uuk'])) {
-        setcookie('uuk', '', $expiration_date, '/');
+        setcookie('uuk', '', $expiration_date, '/cs008/cs008_final/');
     }
 
     // Empty session
@@ -16,7 +16,7 @@
 
     // Check for session in cookie
     if(isset($_COOKIE[session_name()])) {
-        setcookie(session_name(), '', $expiration_date, '/');
+        setcookie(session_name(), '', $expiration_date, '/cs008/cs008_final/');
     }
 
     // Destroy the session
@@ -24,7 +24,7 @@
     session_write_close();
 
     // Send user back to home
-    header("Location: /");
+    header("Location: /cs008/cs008_final/");
     exit;
 
 
