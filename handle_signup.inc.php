@@ -145,7 +145,7 @@ if($dataIsGood) {
         $_SESSION['fldUsername'] = $signup_txtUsername;
 
         // Check for remember me
-        if(isset($_POST['chkRequired'])) {
+        if(isset($_POST['chkRememberMe'])) {
             remember_me($uuk);
         }
 

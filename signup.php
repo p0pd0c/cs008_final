@@ -1,7 +1,6 @@
 <?php
     include 'auth_config.php';
     include 'top.php';
-    include 'handle_signup.inc.php';
 ?>
 
     <form class="form-signin align-self-center" method="POST" action=<?php print '"' . $phpSelf . '"'; ?>>
@@ -47,8 +46,8 @@
         </fieldset>
 
         <fieldset class="text-center">
-            <input type="checkbox" id="chkRequired" name="chkRequired">
-            <label for="chkRequired">Remember Me</label>
+            <input type="checkbox" id="chkRememberMe" name="chkRememberMe">
+            <label for="chkRememberMe">Remember Me</label>
         </fieldset>
 
         <button name="btnSignUpSubmit" class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>

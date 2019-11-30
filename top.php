@@ -17,6 +17,8 @@
 
             // Path parts are the little breadcrumbs that let me know what page I am on by looking at the script name
             $path_parts = pathinfo($phpSelf);
+
+            
         
             print '<title>';
             if ($path_parts['filename'] == "index") {
