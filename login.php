@@ -16,8 +16,8 @@
         </fieldset>
 
         <fieldset class="form-label-group">
-            <input name="txtPassword" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-            <label for="inputPassword">Password</label>
+            <input name="txtPassword" type="password" id="txtPassword" class="form-control" placeholder="Password" required>
+            <label for="txtPassword">Password</label>
         </fieldset>
 
         <fieldset class="text-center">

@@ -1,14 +1,10 @@
 <?php 
     include 'auth_config.php';
-
-    // Get the username / constant to say bye
-    $fldUsername = (isset($_SESSION['fldUsername'])) ? ', ' . $_SESSION['fldUsername'] : ' NOW';
-
     // Check for a remember cookie
-    $expiration_date = time() - date('Z') - $remember;
-
+    // By setting its expiration to a prior date, the cookie gets removed
+    $expiration_date = time() - (86400*2);
     if(isset($_COOKIE['uuk'])) {
-        setcookie('uuk', '', $expiration_date, '/cs008/cs008_final/');
+        setcookie('uuk', '', $expiration_date, '/');
     }
 
     // Empty session
@@ -16,7 +12,7 @@
 
     // Check for session in cookie
     if(isset($_COOKIE[session_name()])) {
-        setcookie(session_name(), '', $expiration_date, '/cs008/cs008_final/');
+        setcookie(session_name(), '', $expiration_date, '/');
     }
 
     // Destroy the session
@@ -26,6 +22,4 @@
     // Send user back to home
     header("Location: /cs008/cs008_final/");
     exit;
-
-
 ?>
