@@ -42,6 +42,23 @@
                 print '<a class="dropdown-item" href="login.php">Login</a>';
                 print '<a class="dropdown-item" href="signup.php">Sign Up</a>';
                 print '</li>';
+
+                if(isset($_SESSION['fldUsername'])) {
+                    print '<li class="nav-item';
+                    if ($path_parts['filename'] == "store") {
+                        print ' active ';
+                    }
+                    print '"><a class="nav-link" href="store.php">Store</a>';
+                    print '</li>';
+
+                    print '<li class="nav-item';
+                    if ($path_parts['filename'] == "logout") {
+                        print ' active ';
+                    }
+                    print '"><a class="nav-link" href="logout.php">Logout</a>';
+                    print '</li>';
+                } 
+                
             ?>
         </ul>
     </section>
