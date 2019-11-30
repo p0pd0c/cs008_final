@@ -71,19 +71,21 @@
                 // Password Is Correct
                 print '<p class="alert alert-success ml-auto mr-auto">Login Successful</p>';
 
+                // User is authenticated so we can store their username in the session
                 $_SESSION['fldUsername'] = $row['fldUsername'];
 
                 if(isset($_POST['chkRemember'])) {
+                    print "<p class='alert alert-info ml-auto mr-auto'> {$row['fldUUK']}</p>";
                     remember_me($row['fldUUK']);
                 }
-
+                /* THIS IS IMPORTANT PLEASE UNCOMMENT DUMB DUMB
                 if(isset($_SESSION['ENTRY_URI'])) {
                     header("Location: {$_SESSION["ENTRY_URI"]}");
                     exit;
                 } else {
                     header("Location: /cs008/cs008_final/");
                     exit;
-                }
+                } */
             } else {
                 // Password Is Incorrect
                 print '<p class="alert alert-warning ml-auto mr-auto">Email or password is incorrect</p>';

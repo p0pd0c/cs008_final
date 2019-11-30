@@ -25,8 +25,8 @@
         </fieldset>
 
         <fieldset class="text-center">
-            <input type="checkbox" id="chkRequired" name="chkRequired">
-            <label for="chkRequired">Remember Me</label>
+            <input type="checkbox" id="chkRememberMe" name="chkRememberMe">
+            <label for="chkRememberMe">Remember Me</label>
         </fieldset>
 
         <button name="btnSubmit" id="btnSubmit" class="btn btn-lg btn-primary btn-block mb-3" type="submit">Sign in</button>
