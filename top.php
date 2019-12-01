@@ -10,6 +10,7 @@
             content="Byte Bakery provides a variety of computer themed baked goods">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!-- Byte Bakery Logo for the favicon -->
         <link rel="icon" 
             type="image/ico" 
             href="favicon.ico"
@@ -30,6 +31,9 @@
                 print '</title>';
             } elseif ($path_parts['filename'] == 'about') {
                 print 'About Us';
+                print '</title>';
+            } elseif ($path_parts['filename'] == 'store') {
+                print 'Order';
                 print '</title>';
             } else {
                 print 'Generic';

@@ -15,18 +15,18 @@ main {
 
 /* Styling that applies to all pages */
 body {
-  background-color: #edc7b7;
+  background-color: #be9a8a;
   font-family: sans-serif; }
   body main.container-fluid {
     color: #bab2b5;
-    background-color: #edc7b7;
+    background-color: #be9a8a;
     width: 85%;
     height: auto;
     font-weight: 600; }
 
 #login, #signup {
   display: block;
-  background-color: #edc7b7; }
+  background-color: #be9a8a; }
   #login p.alert, #signup p.alert {
     width: 60%; }
   #login form, #signup form {

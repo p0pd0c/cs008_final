@@ -6,7 +6,7 @@
     
     include 'top.php';
 
-    // This is already in top.php
+    // // This is already in top.php
     // // Filename of the currently executing script
     // $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
     // // Path parts are the little breadcrumbs that let me know what page I am on by looking at the script name
@@ -25,12 +25,12 @@
         return $data;
     }
 
-    // Include the correcct script for handling the form info depending on the currently executing script name
-    if ($path_parts['filename'] == 'signup') {
-        include 'handle_signup.inc.php';
-    } elseif ($path_parts['filename'] == 'login') {
-        include 'handle_login.inc.php';
-    }
+    // // Include the correcct script for handling the form info depending on the currently executing script name
+    // if ($path_parts['filename'] == 'signup') {
+    //     include 'handle_signup.inc.php';
+    // } elseif ($path_parts['filename'] == 'login') {
+    //     include 'handle_login.inc.php';
+    // }
 
     
 
