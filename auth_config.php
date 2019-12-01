@@ -64,11 +64,12 @@
                 
                 if($statement->rowCount() == 1) {
                     $row = $statement->fetch();
+
                     $_SESSION['fldUsername'] = $row['fldUsername'];
 
                     // This is the part where we call the cookie maker to extend the expiration
                     remember_me($uuk);
-
+                    // Return the username so that it can be given to $uid or something
                     return $_SESSION['fldUsername'];
                 }
             }

@@ -1,7 +1,15 @@
 <?php
-    include 'top.php';
+    include 'auth_config.php';
 ?>
 
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
+    <p>Site under construction</p>
     <p>Site under construction</p>
     <p>Site under construction</p>
 </main>
