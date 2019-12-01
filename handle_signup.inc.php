@@ -1,20 +1,8 @@
 <?php
 include 'recaptchalib.php';
-
-
+ 
 // Initially false so that signup will only take place after form proper submission
 $dataIsGood = false;
-
-function getData($field) {
-    if(!isset($_POST[$field])) {
-        $data = "";
-    } else {
-        $data = trim($_POST[$field]);
-        $data = htmlspecialchars($data);
-    }
-
-    return $data;
-}
 
 // If the user clicked the signup button
 if(isset($_POST['btnSignUpSubmit'])) {
@@ -69,7 +57,7 @@ if(isset($_POST['btnSignUpSubmit'])) {
     $pregUsername = "/(?!.*[\.\-\_]{2,})^[a-zA-Z0-9\.\-\_]{3,24}$/";
     if(!preg_match($pregUsername, $signup_txtUsername)) {
         // Username is invalid
-        print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Username must be at least 3 characters and has a maximum of 24 characters. It can only contain alphanumeric characters and some special characters: dot (.), underscore (_), and hypen (-). Special characters must not appear consecutively/ combined</p>';
+        print '<p role="alert" class="alert alert-warning ml-auto mr-auto">Username must be at least 3 characters and has a maximum of 24 characters. It can only contain alphanumeric characters and some special characters: dot (.), underscore (_), and hypen (-). Special characters must not appear consecutively/combined</p>';
 
         $dataIsGood = false;
     }
@@ -138,7 +126,7 @@ if($dataIsGood) {
         $statement = $pdo->prepare($sql);
         $params = [$signup_txtUsername, $signup_txtEmail, $signup_hashedPassword, $signup_txtFirstName, $signup_txtLastName, $uuk];
         $statement->execute($params);
-        print '<p role="alert" class="alert alert-success ml-auto mr-auto">Your account has been created successfully. <a class="alert-link" href="login.php">Please Log in</a></p>';
+        print '<p role="alert" class="alert alert-success ml-auto mr-auto">Your account has been created successfully. <a class="alert-link" href="index.php">Please return to the homepage</a></p>';
 
         // Put the username into a session variable
         $_SESSION['fldUsername'] = $signup_txtUsername;
@@ -174,6 +162,8 @@ if($dataIsGood) {
             print '<p class="alert alert-danger ml-auto mr-auto">Notification email failed to send... did you give an invalid email address? Try logging in, for it is possible our mail servers are down. If you cannont log in... you must make a new account!</p>';
         }
         
+        //header('Location: index.php');
+
         die();
 
     } catch (PDOException $e) {

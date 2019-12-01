@@ -6,6 +6,8 @@
     
     include 'top.php';
 
+    
+
     // // This is already in top.php
     // // Filename of the currently executing script
     // $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");

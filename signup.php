@@ -2,7 +2,6 @@
     include 'auth_config.php';
     include 'handle_signup.inc.php';
 ?>
-
     <form class="form-signin align-self-center" method="POST" action=<?php print '"' . $phpSelf . '"'; ?>>
         <section class="text-center mb-4">
             <!-- REPLACE W/ Bytebakery logo: img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" -->
