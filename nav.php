@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <!-- Brand Name | Clickable to go back to the home page-->
-    <a class="navbar-brand" href="index.php">Byte Bakery</a>
+    <!-- <a class="navbar-brand" href="index.php">Byte Bakery</a> -->
+    <i class="navIcon"></i>
 
     <!-- Hamburger Button -->
     <button 
@@ -49,7 +50,7 @@
                     print '</li>';
                 } 
 
-                print '<li class="nav-item dropdown bg-dark';
+                print '<li class="nav-item dropdown';
                 if ($path_parts['filename'] == "login" || $path_parts['filename'] == "signup") {
                     print ' active ';
                 }

@@ -9,6 +9,11 @@
             name="description"
             content="Byte Bakery provides a variety of computer themed baked goods">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" 
+            type="image/ico" 
+            href="favicon.ico"
+        >
         
         <?php
             // Filename of the currently executing script
