@@ -1,5 +1,4 @@
 <?php
-include 'sql.php';
 include 'recaptchalib.php';
 
 

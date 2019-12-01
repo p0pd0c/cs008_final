@@ -4,18 +4,35 @@
 
     include 'sql.php';
     
+    include 'top.php';
 
-    // Filename of the currently executing script
-    $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
+    // This is already in top.php
+    // // Filename of the currently executing script
+    // $phpSelf = htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, "UTF-8");
+    // // Path parts are the little breadcrumbs that let me know what page I am on by looking at the script name
+    // $path_parts = pathinfo($phpSelf);
 
-    // Path parts are the little breadcrumbs that let me know what page I am on by looking at the script name
-    $path_parts = pathinfo($phpSelf);
 
+    // Get and sanitize data from a field in a form
+    function getData($field) {
+        if(!isset($_POST[$field])) {
+            $data = "";
+        } else {
+            $data = trim($_POST[$field]);
+            $data = htmlspecialchars($data);
+        }
+
+        return $data;
+    }
+
+    // Include the correcct script for handling the form info depending on the currently executing script name
     if ($path_parts['filename'] == 'signup') {
         include 'handle_signup.inc.php';
     } elseif ($path_parts['filename'] == 'login') {
         include 'handle_login.inc.php';
     }
+
+    
 
     // This function checks the session variables to see if the user is currently logged in/ or if we are making a test request for testing purposes
     function access_control($test = FALSE) {
@@ -58,7 +75,7 @@
         }
         //
 
-        // If we get to this point, we are sure that this is not a test request and the user is not logged in so we need to direct them to the login page
+        // If we get to this point, we are sure that this is not a test request, the session variable fldUsername is not set and there is no uuk cookie, thus the user is not logged in so we need to direct them to the login page
         // The header function allows a browser redirect
         header('Location: login.php');
         exit;

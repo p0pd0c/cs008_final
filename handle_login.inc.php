@@ -1,18 +1,5 @@
 <?php
-    include 'sql.php';
     include 'recaptchalib.php';
-    
-    // Get and sanitize data from a field
-    function getData($field) {
-        if(!isset($_POST[$field])) {
-            $data = "";
-        } else {
-            $data = trim($_POST[$field]);
-            $data = htmlspecialchars($data);
-        }
-
-        return $data;
-    }
 
     // Keep track of data validity
     $dataIsGood = false;
@@ -75,7 +62,7 @@
                 $_SESSION['fldUsername'] = $row['fldUsername'];
 
                 if(isset($_POST['chkRemember'])) {
-                    print "<p class='alert alert-info ml-auto mr-auto'> {$row['fldUUK']}</p>";
+                    print "<p class='alert alert-info ml-auto mr-auto'>" . $row['fldUUK'] . "</p>";
                     remember_me($row['fldUUK']);
                 }
                 /* THIS IS IMPORTANT PLEASE UNCOMMENT DUMB DUMB

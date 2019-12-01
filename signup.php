@@ -1,6 +1,5 @@
 <?php
     include 'auth_config.php';
-    include 'top.php';
 ?>
 
     <form class="form-signin align-self-center" method="POST" action=<?php print '"' . $phpSelf . '"'; ?>>

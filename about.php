@@ -1,5 +1,5 @@
 <?php
-    include 'top.php';
+    include 'auth_config.php';
 ?>
 
     <p>This page is under construction</p>
