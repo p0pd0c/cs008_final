@@ -1,6 +1,4 @@
 <?php
-    include 'sql.php';
-
     function getData($field) {
         if(!isset($_POST[$field])) {
             $data = '';

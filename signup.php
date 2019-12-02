@@ -6,7 +6,7 @@
         <section class="text-center mb-4">
             <!-- REPLACE W/ Bytebakery logo: img class="mb-4" src="/docs/4.3/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72" -->
             <h1 class="h3 mb-3 font-weight-normal">Sign Up</h1>
-            <p>In order to participate, you must first sign up</p>
+            <p>In order to participate, you must sign up</p>
         </section>
 
         <fieldset class="form-label-group">

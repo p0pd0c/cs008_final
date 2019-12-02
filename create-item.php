@@ -1,10 +1,7 @@
 <?php
-    include 'top.php';
-?>
-
-<main>
-    <?php
-        include 'add-item-inc.php';
+    require 'auth_config.php';
+    $uid = access_control(FALSE, $pdo);
+    include 'add-item-inc.php';
     ?>
     <form action="create-item.php" method="POST">
         <label for="txtItemName">Name of Item:</label>

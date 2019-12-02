@@ -2,7 +2,7 @@
     // Start session to get access to session variables
     session_start();
 
-    include 'sql.php';
+    require 'sql.php';
     
     include 'top.php';
 
@@ -37,7 +37,7 @@
     
 
     // This function checks the session variables to see if the user is currently logged in/ or if we are making a test request for testing purposes
-    function access_control($test = FALSE) {
+    function access_control($test = FALSE, $pdo) {
         // Keep track of where the user came from
         $_SESSION['ENTRY_URI'] = $_SERVER['REQUEST_URI'];
 
