@@ -8,7 +8,7 @@
         $dataIsGood = true;
 
         // Getting all of the data from the form
-        $cardNumber = getData('txtCard');
+        $cardNumber = getData('txtCardNumber');
         $csv = getData('txtCsv');
         $txtFirstName = getData('txtFirstName');
         $txtLastName = getData('txtLastName');
