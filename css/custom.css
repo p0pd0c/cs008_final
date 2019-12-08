@@ -2,6 +2,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   height: 100%; }
 
 .navbar-nav > li > .dropdown-menu {
@@ -10,17 +11,14 @@ html, body {
     color: #9A9DA0; }
 
 /* The navbar is 50px tall so move main content down so it does not get obscured */
-main {
-  padding-top: 50px; }
-
 /* Styling that applies to all pages */
 body {
   background-color: #be9a8a;
   font-family: sans-serif; }
   body main.container-fluid {
-    color: #bab2b5;
+    color: #123c69;
     background-color: #be9a8a;
-    width: 85%;
+    width: 100%;
     height: auto;
     font-weight: 600; }
 
@@ -40,5 +38,39 @@ body {
     #login form #btnSubmit, #signup form #btnSubmit {
       background-color: #123c69;
       border-color: #123c69; }
+
+.carousel-item > img {
+  max-width: 100%; }
+
+.nudge {
+  margin-top: 50px; }
+
+figure > img {
+  max-width: 100%; }
+
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto; }
+  table thead {
+    background-color: #be9a8a;
+    color: #ac3b61;
+    font-weight: bold; }
+  table td {
+    border: 1px dashed #be9a8a;
+    text-align: right; }
+    table td + td {
+      text-align: center; }
+  table th, table td {
+    padding: 0.5em 1em; }
+  table tbody > tr:nth-child(odd) {
+    background-color: rgba(204, 204, 204, 0.7); }
+  table tbody > tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.7); }
+  table tbody > tr:hover {
+    background-color: #ffff99; }
+  table tfoot tr td:nth-child(even) {
+    text-align: right; }
 
 /*# sourceMappingURL=custom.css.map */

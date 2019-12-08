@@ -2,6 +2,7 @@
 html, body
     margin: 0
     padding: 0
+    overflow-x: hidden
     height: 100%
 
 .navbar-nav > li > .dropdown-menu 
@@ -11,11 +12,10 @@ html, body
         color: #9A9DA0
 
 /* The navbar is 50px tall so move main content down so it does not get obscured */
-main
-    padding-top: 50px
 
 /* Styling that applies to all pages */
 $main-background-color: #be9a8a
+$old-main-bg-color: #be9a8a
 $main-background-light-color: #eee2dc
 $main-heading-color: #ac3b61
 $main-accent-grey: #bab2b5
@@ -27,9 +27,9 @@ body
     font-family: sans-serif
 
     main.container-fluid
-        color: $main-accent-grey
+        color: $main-accent-blue
         background-color: $main-background-color
-        width: 85%
+        width: 100%
         height: auto
         font-weight: 600
 
@@ -56,3 +56,46 @@ body
             background-color: $main-accent-blue
             border-color: $main-accent-blue
 
+.carousel-item > img
+        max-width: 100%
+    
+
+.nudge
+    margin-top: 50px
+
+figure > img
+    max-width: 100%
+
+table
+    border-collapse: collapse
+    border: 1px solid black
+
+    margin-left: auto
+    margin-right: auto
+
+    thead
+        background-color: $main-background-color
+        color: $main-heading-color
+        font-weight: bold
+    
+    td
+        border: 1px dashed $main-background-color
+        text-align: right
+
+        + td
+            text-align: center
+
+    th, td 
+        padding: 0.5em 1em
+
+    tbody > tr:nth-child(odd) 
+        background-color: rgba(204, 204, 204, 0.7)
+
+    tbody > tr:nth-child(even) 
+        background-color: rgba(255, 255, 255, 0.7)
+
+    tbody > tr:hover
+        background-color: #ffff99
+
+    tfoot tr td:nth-child(even)
+        text-align: right

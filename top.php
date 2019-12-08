@@ -48,7 +48,7 @@
         
         <?php 
             // Include bootstrap experimental stylesheet on login and signup pages
-            if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup' || $path_parts['filename'] == 'store') {
+            if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup') {
                 print '<link href="https://getbootstrap.com/docs/4.3/examples/floating-labels/floating-labels.css" rel="stylesheet">';
             }
         ?>
@@ -59,11 +59,13 @@
         print '<body id="' . $path_parts['filename'] . '">';
         include 'header.php';
         if ($path_parts['filename'] == 'login' || $path_parts['filename'] == 'signup') {
-            print '<main class="container-fluid m0 d-flex flex-column ml-auto mr-auto">';
+            print '<main class="nudge container-fluid m0 d-flex flex-column ml-auto mr-auto">';
         } elseif ($path_parts['filename'] == 'store') {
-            print '<main id="shop" class="container-fluid m0 d-flex flex-column ml-auto mr-auto">';
-        } else {
-            print '<main class="container-fluid m0">';
+            print '<main id="shop" class="nudge container-fluid m0 d-flex flex-column ml-auto mr-auto">';
+        } elseif ($path_parts['filename'] == 'menu') {
+            print '<main class="nudge">';
+        }else {
+            print '<main class="nudge">';
         }
     ?>
 

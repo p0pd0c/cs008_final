@@ -1,10 +1,8 @@
 <?php 
-    // Start session to get access to session variables
-    session_start();
-
+    
     require 'sql.php';
     
-    include 'top.php';
+    // include 'top.php';
 
     
 
@@ -43,21 +41,25 @@
 
         // Check if the uid is set... it it is, then the user is currently logged in
         if(isset($_SESSION['fldUsername'])) {
+            
             return $_SESSION['fldUsername'];
         } 
 
         // Test requests can be made, check if the request is a test
         if($test) {
+            print '<p>I am testing</p>';
             return FALSE;
         }
 
         
         // Now we should deal with extending the expiration of the remember cookie if the user is logged in
         // Check if the user is logged in by looking at the session variables
+        // print 'Checking session username';
         if(!isset($_SESSION['fldUsername'])) {
-            
+            // print '<p>Could not find username in session</p>';
             // Check if user's cookie is set due to them using remember me when logging in
             if(isset($_COOKIE['uuk'])) {
+                // print '<p>I found a valid cookie</p>';
                 $uuk = htmlspecialchars($_COOKIE['uuk']);
                 $sql = 'SELECT fldUsername FROM tblUsers WHERE uuk = :uuk';
                 $statement = $pdo->prepare($sql);
@@ -66,12 +68,13 @@
                 
                 if($statement->rowCount() == 1) {
                     $row = $statement->fetch();
-
+                    // print '<p>I got here</p>';
                     $_SESSION['fldUsername'] = $row['fldUsername'];
 
                     // This is the part where we call the cookie maker to extend the expiration
                     remember_me($uuk);
                     // Return the username so that it can be given to $uid or something
+
                     return $_SESSION['fldUsername'];
                 }
             }
@@ -79,7 +82,7 @@
         //
 
         // If we get to this point, we are sure that this is not a test request, the session variable fldUsername is not set and there is no uuk cookie, thus the user is not logged in so we need to direct them to the login page
-        // The header function allows a browser redirect
+        //The header function allows a browser redirect
         header('Location: login.php');
         exit;
     }

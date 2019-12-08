@@ -1,6 +1,9 @@
 <?php 
+    session_start();
     include 'auth_config.php';
+    include 'top.php';
     include 'handle_login.inc.php';
+
 ?>
     <form class="form-signin align-self-center" method="POST" action=<?php print '"' . $phpSelf . '"'; ?>>
         <section class="text-center mb-4">

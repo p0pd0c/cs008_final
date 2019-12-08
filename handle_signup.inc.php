@@ -162,7 +162,7 @@ if($dataIsGood) {
             print '<p class="alert alert-danger ml-auto mr-auto">Notification email failed to send... did you give an invalid email address? Try logging in, for it is possible our mail servers are down. If you cannont log in... you must make a new account!</p>';
         }
         
-        //header('Location: index.php');
+        header('Location: index.php');
 
         die();
 

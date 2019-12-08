@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include 'auth_config.php';
     // Check for a remember cookie
     // By setting its expiration to a prior date, the cookie gets removed

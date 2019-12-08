@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include 'auth_config.php';
 
     $uid = access_control(FALSE, $pdo);

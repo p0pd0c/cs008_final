@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require 'auth_config.php';
     $uid = access_control(FALSE, $pdo);
     include 'add-item-inc.php';

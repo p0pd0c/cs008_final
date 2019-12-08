@@ -4,8 +4,15 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
 
-    <footer class="container-fluid">
-            <p>Under Construction</p>
+    <footer class="p-2 mt-3 row bg-dark text-light text-center">
+        <section class="row col-md-12">
+          <p class="col-md-6">Ben Smith | Section B</p>
+          <p class="col-md-6">Jared DiScipio | Section A</p>
+        </section>
+        <section class="row col-md-12">
+          <p class="col-md-6 text-left">All prices, custom orders and otherwise, are non-negotiable. Byte Bakery is not responsible for harm caused by raw or undercooked ingredients. All sales are final.</p>
+          <p class="col-md-6 text-left">Byte Bakery is not liable for any physical harm that befalls customers while in or near the vicinity of our establishment. Byte Bakery is not responsible for lost or misplaced items. Please eat responsibly.</p>
+        </section>
     </footer>
 </html>
     
